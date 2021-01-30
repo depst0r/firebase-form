@@ -1,12 +1,13 @@
 'use strict'
 
-const form = document.querySelector('form'),
-    firstName = document.getElementById('exampleInputFirstName'),
-    lastName = document.getElementById('exampleInputLastName'),
-    btnSubmit = document.querySelector('.btn'),
-    email = document.getElementById('exampleInputEmail1'),
-    pass = document.getElementById('exampleInputPassword1'),
-    checkbox = document.getElementById('exampleCheck1');
+window.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form'),
+        firstName = document.getElementById('exampleInputFirstName'),
+        lastName = document.getElementById('exampleInputLastName'),
+        btnSubmit = document.querySelector('.btn'),
+        email = document.getElementById('exampleInputEmail1'),
+        pass = document.getElementById('exampleInputPassword1');
+
 
 // function postDB(formData) {
 //     fetch('https://js-form-7807a-default-rtdb.firebaseio.com/form.json', {
@@ -22,13 +23,24 @@ const form = document.querySelector('form'),
 
 form.addEventListener('submit', submitHandler);
 
+function valid() {
+    const objInputForm = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value,
+        password: pass.value 
+    }
+    
+}
+
 function submitHandler(event) {
     event.preventDefault()
 
-    console.log(firstName.value)
-    console.log(lastName.value)
-    console.log(email.value)
-    console.log(pass.value)
+    valid()
+    // console.log(firstName.value)
+    // console.log(lastName.value)
+    // console.log(email.value)
+    // console.log(pass.value)
 
     // btnSubmit.addEventListener('click', () => {
     //     postDB(email.value)
@@ -37,4 +49,6 @@ function submitHandler(event) {
     //     btnSubmit.disabled = true
 
     // })
-}
+ };
+
+});
