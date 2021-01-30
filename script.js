@@ -30,7 +30,11 @@ function valid() {
         email: email.value,
         password: pass.value 
     }
-    
+    if (objInputForm.firstName.length >= 3) {
+        console.log(objInputForm.firstName)
+    } else {
+        console.log('object')
+    }
 }
 
 function submitHandler(event) {
