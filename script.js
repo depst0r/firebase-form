@@ -1,6 +1,8 @@
 'use strict'
 
 const form = document.querySelector('form'),
+    firstName = document.getElementById('exampleInputFirstName'),
+    lastName = document.getElementById('exampleInputLastName'),
     btnSubmit = document.querySelector('.btn'),
     email = document.getElementById('exampleInputEmail1'),
     pass = document.getElementById('exampleInputPassword1'),
@@ -23,6 +25,8 @@ form.addEventListener('submit', submitHandler);
 function submitHandler(event) {
     event.preventDefault()
 
+    console.log(firstName.value)
+    console.log(lastName.value)
     console.log(email.value)
     console.log(pass.value)
 
