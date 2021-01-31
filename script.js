@@ -24,16 +24,17 @@ window.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', submitHandler);
 
 function valid() {
-    const objInputForm = {
-        firstName: firstName.value,
-        lastName: lastName.value,
-        email: email.value,
-        password: pass.value 
-    }
-    if (objInputForm.firstName.length >= 3) {
-        console.log(objInputForm.firstName)
+    // const objInputForm = {
+    //     firstName: firstName.value,
+    //     lastName: lastName.value,
+    //     email: email.value,
+    //     password: pass.value 
+    // }
+
+    if (firstName.value.length >= 5 && lastName.value.length >= 5) {
+        console.log('true')
     } else {
-        console.log('object')
+        console.log('false')
     }
 }
 
