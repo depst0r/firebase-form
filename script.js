@@ -20,15 +20,26 @@ window.addEventListener('DOMContentLoaded', () => {
 //     .then(res => console.log(res))
 // }
 
-
     function isValid(elem) {
+        const _regExpEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm;
+
         switch (elem.id) {
             case 'exampleInputFirstName':
                 elem.value.length >= 3 ? elem.nextElementSibling.textContent = ''
                 : ( elem.nextElementSibling.textContent = 'Min length 3 simbol')
+                break;
             case 'exampleInputLastName':
                 elem.value.length >= 3 ? elem.nextElementSibling.textContent = ''
                 : elem.nextElementSibling.textContent = 'Min length 3 simbol'
+                break;
+            case 'exampleInputEmail1':
+                _regExpEmail.test(elem.value) ? elem.nextElementSibling.textContent = '' 
+                : elem.nextElementSibling.textContent = 'Enter valid email'
+                break;
+            case 'exampleInputPassword1':
+                elem.value.length >= 6 ? elem.nextElementSibling.textContent = '' 
+                : elem.nextElementSibling.textContent = 'The minimum password length is 6 characters'
+                break;
             default:
                 break;
         }
