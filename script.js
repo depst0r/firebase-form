@@ -48,9 +48,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
         };
         console.log(objValueForm)
+        console.dir(objValueForm)
 
     };
            
+    
 
 
     for (let elements of form.elements) {
