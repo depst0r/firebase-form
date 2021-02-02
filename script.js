@@ -67,27 +67,27 @@ form.addEventListener('submit', submitHandler);
 
 function submitHandler(event) {
     event.preventDefault()
+    
+    let isValidate = false
 
-    // let isValidate = false
-
-    //     for (let elements of form.elements) {
-    //         if (!elements.classList.contains('btn')) {
-    //             if (elements.value === '') {
-    //                 elements.nextElementSibling.textContent = 'This field is empty'
-    //                 isValidate = false
-    //         } else {
-    //             elements.nextElementSibling.textContent = ''
-    //             isValidate = true
-    //         }
-    //     }
+        for (let elements of form.elements) {
+            if (!elements.classList.contains('btn')) {
+                if (elements.value === '') {
+                    elements.nextElementSibling.textContent = 'This field is empty'
+                    isValidate = false
+            } else {
+                elements.nextElementSibling.textContent = ''
+                isValidate = true
+            }
+        }
         
-    // };
+    };
 
-    // if (isValidate) {
-    //     submitForm(this.objValueForm)
-    // } else {
-    //     alert('Форма не отправлена')
-    // }
+    if (isValidate) {
+        submitForm(form)
+    } else {
+        alert('Форма не отправлена')
+    }
     
 
   };
