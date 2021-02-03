@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function isValid(elem) {
         const _regExpEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm;
-        const _regExpName = /^[A-Za-z0-9]{3,3}$/
+        const _regExpName = /^[A-Za-z0-9]{3,45}$/
 
         switch (elem.id) {
             case 'exampleInputFirstName':
@@ -53,8 +53,6 @@ window.addEventListener('DOMContentLoaded', () => {
     };
            
     
-
-
     for (let elements of form.elements) {
         if (!elements.classList.contains('btn')) {
             elements.addEventListener('input', () => {
@@ -86,9 +84,18 @@ function submitHandler(event) {
     };
 
     if (isValidate) {
-        submitForm(form)
+        submitForm(objValueForm)
+ for (let elements of form.elements) {
+         elements.value = ''
+                
+        }
+      
+
+
+
+
     } else {
-        alert('Форма не отправлена')
+        alert('Форма не отправлена, заполните поля корректно')
     }
     
 
